@@ -11,7 +11,7 @@ RUN apk add mysql-client
 COPY package*.json ./
 
 # install the app dependencies
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the app files into the container
 COPY . .
