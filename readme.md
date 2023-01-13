@@ -24,7 +24,7 @@ This script can be run on any server with Node.js. Git clone this repository, th
 This script can be run on Kubernetes. The following is an example of a Kubernetes deployment:
 
 ```yaml
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: mysql-s3-backup
