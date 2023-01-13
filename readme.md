@@ -1,4 +1,8 @@
-# mysql-s3-backup
+<center>
+<h1>
+<img src="https://labs.mysql.com/common/logos/mysql-logo.svg?v2" height=40>   MySQL S3 Backup   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png" height=40>
+</h1>
+</center>
 
 The effortless MySQL backup to S3.
 
