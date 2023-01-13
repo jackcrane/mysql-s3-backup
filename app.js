@@ -75,10 +75,10 @@ const s3 = new S3({
 });
 
 // Generate date in format YYYY-MM-DD-HH
-const date = moment().format("YYYY-MM-DD-HH-MM");
+const date = moment().format("YYYY-MM-DD-HH-mm");
 
 DATABASES.forEach((database) => {
-  // Delete old backups. File names are in format database-YYYY-MM-DD-HH-MM.sql so we want to delete all files equal to or older than the number of hours specified in the .env file in the BACKUP_RETENTION variable.
+  // Delete old backups. File names are in format database-YYYY-MM-DD-HH-mm.sql so we want to delete all files equal to or older than the number of hours specified in the .env file in the BACKUP_RETENTION variable.
   const params = {
     Bucket: S3_BUCKET,
     Prefix: `db_backups/${database}.sql`,
@@ -90,7 +90,7 @@ DATABASES.forEach((database) => {
       data.Contents.forEach((file) => {
         const fileDate = moment(
           file.Key.split("-").pop().split(".")[0],
-          "YYYY-MM-DD-HH-MM"
+          "YYYY-MM-DD-HH-mm"
         );
         const diff = moment.duration(moment().diff(fileDate)).asHours();
         if (diff >= BACKUP_RETENTION) {
