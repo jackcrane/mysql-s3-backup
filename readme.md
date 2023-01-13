@@ -23,7 +23,7 @@ This script can be run on any server with Node.js. Git clone this repository, th
 
 This script can be run on Kubernetes. The following is an example of a Kubernetes deployment:
 
-````yaml
+```yaml
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
@@ -35,32 +35,32 @@ spec:
       template:
         spec:
           containers:
-          - name: node-app
-            image: jackcranee/mysql-s3-backup:0.1
-            command: ["npm", "start", "method=ENV"]
-            env:
-            - name: S3_ENDPOINT
-              value: https://nyc3.digitaloceanspaces.com
-            - name: S3_ACCESS_KEY
-              value: DO00NJAX___KE98ENG6E
-            - name: S3_SECRET_KEY
-              value: 8CvRkYNv2qoy___2d2VFzwo/hGJSJ4___zJ5/0___14
-            - name: S3_BUCKET
-              value: jack-general
-            - name: S3_REGION
-              value: us-east-1
-            - name: MYSQL_HOST
-              value: db.example.com
-            - name: MYSQL_USER
-              value: root
-            - name: MYSQL_PASSWORD
-              value: password
-            - name: DATABASES
-              value: '["db1","db2"]'
-            - name: BACKUP_RETENTION
-              value: "96"
-            - name: PREFIX
-              value: db_backup
+            - name: node-app
+              image: jackcranee/mysql-s3-backup:0.1
+              command: ["npm", "start", "method=ENV"]
+              env:
+                - name: S3_ENDPOINT
+                  value: https://nyc3.digitaloceanspaces.com
+                - name: S3_ACCESS_KEY
+                  value: DO00NJAX___KE98ENG6E
+                - name: S3_SECRET_KEY
+                  value: 8CvRkYNv2qoy___2d2VFzwo/hGJSJ4___zJ5/0___14
+                - name: S3_BUCKET
+                  value: jack-general
+                - name: S3_REGION
+                  value: us-east-1
+                - name: MYSQL_HOST
+                  value: db.example.com
+                - name: MYSQL_USER
+                  value: root
+                - name: MYSQL_PASSWORD
+                  value: password
+                - name: DATABASES
+                  value: '["db1","db2"]'
+                - name: BACKUP_RETENTION
+                  value: "96"
+                - name: PREFIX
+                  value: db_backup
           restartPolicy: OnFailure
 ```
 
@@ -72,7 +72,7 @@ There are 3 ways of running this utility, definitions are at the bottom of this 
 
 ```bash
 npm start method=ENV
-````
+```
 
 Env file template:
 
