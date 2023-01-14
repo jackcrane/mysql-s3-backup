@@ -13,8 +13,8 @@ The effortless MySQL backup to S3.
 The easiest way to deploy this script is to pull the Docker image from Docker Hub:
 
 ```bash
-docker pull jackcranee/mysql-s3-backup:0.3
-docker run jackcranee/mysql-s3-backup:0.3
+docker pull jackcranee/mysql-s3-backup:latest
+docker run jackcranee/mysql-s3-backup:latest
 ```
 
 Then run the image with the environment variables. **NOTE: The docker image ONLY supports environment variables.**
@@ -40,7 +40,7 @@ spec:
         spec:
           containers:
             - name: node-app
-              image: jackcranee/mysql-s3-backup:0.3
+              image: jackcranee/mysql-s3-backup:latest
               command: ["npm", "start", "method=ENV"]
               env:
                 - name: S3_ENDPOINT
