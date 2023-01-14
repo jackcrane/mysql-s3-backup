@@ -97,6 +97,7 @@ DATABASES=["db1","db2"]
 BACKUP_RETENTION=96
 PREFIX=db_backup
 DELETE_LOCAL_BACKUP=true
+
 ```
 
 ## Using a Config File
@@ -107,7 +108,7 @@ npm start method=FILE ./config.json
 
 Config file template:
 
-````json
+```json
 {
   "S3_ENDPOINT": "https://nyc3.digitaloceanspaces.com",
   "S3_ACCESS_KEY": "DO00NJAX___KE98ENG6E",
@@ -122,12 +123,13 @@ Config file template:
   "PREFIX": "db_backup",
   "DELETE_LOCAL_BACKUP": true
 }
+```
 
 ## Using inline arguments
 
 ```bash
 npm start method=inline S3_ENDPOINT S3_REGION S3_ACCESS_KEY S3_SECRET_KEY S3_BUCKET BACKUP_RETENTION MYSQL_HOST MYSQL_USER MYSQL_PASSWORD DATABASES PREFIX
-````
+```
 
 Example:
 
