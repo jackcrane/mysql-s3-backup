@@ -6,6 +6,10 @@
 
 The effortless MySQL backup to S3.
 
+[![Build](https://github.com/jackcrane/mysql-s3-backup/actions/workflows/build.yaml/badge.svg)](https://github.com/jackcrane/mysql-s3-backup/actions/workflows/build.yaml)
+
+---
+
 ## Deploying
 
 ### Easy
