@@ -18,6 +18,7 @@ let MYSQL_PASSWORD = process.env.MYSQL_PASSWORD;
 let DATABASES = JSON.parse(process.env.DATABASES);
 let PREFIX = process.env.PREFIX;
 let DELETE_LOCAL_BACKUP = process.env.DELETE_LOCAL_BACKUP || true;
+let MONITORING_WEBHOOK = process.env.MONITORING_WEBHOOK;
 
 const method = process.argv[2]?.split("=")[1];
 switch (method) {
@@ -135,6 +136,9 @@ DATABASES.forEach((database) => {
       try {
         const data = await s3.send(new PutObjectCommand(params));
         console.log(`Dump file for ${database} uploaded to S3. ${params.Key}`);
+        if (MONITORING_WEBHOOK) {
+          fetch(MONITORING_WEBHOOK);
+        }
       } catch (err) {
         console.log("Error", err);
       }
