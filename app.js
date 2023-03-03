@@ -5,6 +5,7 @@ import { createReadStream, readFileSync, unlink, writeFileSync } from "fs";
 dotenv.config();
 import moment from "moment";
 import path from "path";
+import fetch from "node-fetch";
 
 let S3_ENDPOINT = process.env.S3_ENDPOINT;
 let S3_REGION = process.env.S3_REGION;
