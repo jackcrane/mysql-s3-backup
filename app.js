@@ -5,7 +5,7 @@ import { createReadStream, readFileSync, unlink, writeFileSync } from "fs";
 dotenv.config();
 import moment from "moment";
 import path from "path";
-import fetch from "node-fetch";
+import https from "https";
 
 let S3_ENDPOINT = process.env.S3_ENDPOINT;
 let S3_REGION = process.env.S3_REGION;
@@ -139,7 +139,7 @@ DATABASES.forEach((database) => {
         console.log(`Dump file for ${database} uploaded to S3. ${params.Key}`);
         if (MONITORING_WEBHOOK) {
           // Send notification to monitoring webhook
-          await fetch(MONITORING_WEBHOOK);
+          https.get(MONITORING_WEBHOOK);
         }
       } catch (err) {
         console.log("Error", err);
