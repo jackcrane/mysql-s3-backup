@@ -17,6 +17,7 @@ RUN npm install
 COPY . .
 
 RUN cat package.json
+RUN cat index.js
 
 # Specify the command to run when the container starts
 CMD ["node", "app.js", "method=ENV"]
