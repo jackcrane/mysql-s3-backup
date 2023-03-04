@@ -16,5 +16,7 @@ RUN npm install
 # Copy the rest of the app files into the container
 COPY . .
 
+RUN cat package.json
+
 # Specify the command to run when the container starts
 CMD ["node", "app.js", "method=ENV"]

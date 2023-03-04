@@ -138,7 +138,8 @@ DATABASES.forEach((database) => {
         const data = await s3.send(new PutObjectCommand(params));
         console.log(`Dump file for ${database} uploaded to S3. ${params.Key}`);
         if (MONITORING_WEBHOOK) {
-          fetch(MONITORING_WEBHOOK);
+          // Send notification to monitoring webhook
+          await fetch(MONITORING_WEBHOOK);
         }
       } catch (err) {
         console.log("Error", err);
