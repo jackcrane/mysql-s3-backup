@@ -1,0 +1,19 @@
+[
+  {
+    "apihost": "https://faas-nyc1-2ef2e6cc.doserverless.co",
+    "namespace": "fn-f246d88d-f24f-44a6-aba1-d01144c0302b",
+    "packageVersions": {
+      "database-backup": {
+        "version": "0.0.20",
+        "digest": "9b2f148a9e47e7f7520a02724a25fd1606c99c02ac68418d89b44b5876a01b90"
+      }
+    },
+    "actionVersions": {
+      "database-backup/mysql-s3-backup": {
+        "version": "0.0.19",
+        "digest": "66a74ec06309fde9b3d6b23c1a706e37e43e1bd68f487698e9af71f141d60aa8"
+      }
+    },
+    "webHashes": {}
+  }
+]
